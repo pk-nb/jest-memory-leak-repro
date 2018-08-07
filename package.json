@@ -5,6 +5,19 @@
   "author": "Nathanael Beisiegel",
   "license": "MIT",
   "dependencies": {
+    "jasmine": "^3.1.0",
     "jest": "^23.4.2"
+  },
+  "scripts": {
+    "jest:jsdom": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --testURL=http://localhost",
+    "jest:node": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --env=node",
+    "jest:00:jsdom": "yarn jest:jsdom ./00-no-requires-no-leak",
+    "jest:00:node": "yarn jest:node ./00-no-requires-no-leak",
+    "jest:01:jsdom": "yarn jest:jsdom ./01-leak-with-require-closure",
+    "jest:01:node": "yarn jest:node ./01-leak-with-require-closure",
+    "jest:02:jsdom": "yarn jest:jsdom ./02-hack-around-leak",
+    "jest:02:node": "yarn jest:node ./02-hack-around-leak",
+    "jest:03:jsdom": "yarn jest:jsdom ./03-large-suite-run-out-of-memory",
+    "jest:03:node": "yarn jest:node ./03-large-suite-run-out-of-memory"
   }
 }
