@@ -11,8 +11,9 @@
   "scripts": {
     "jest:jsdom": "jest --runInBand --logHeapUsage --testURL=http://localhost",
     "jest:node": "jest --runInBand --logHeapUsage --env=node",
-    "jest:jsdom:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --testURL=http://localhost",
-    "jest:node:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --env=node",
+    "jest:jsdom:debug": "yarn devtool-prompt && node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --testURL=http://localhost",
+    "jest:node:debug": "yarn devtool-prompt && node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --env=node",
+    "devtool-prompt": "echo 'Open the chrome://inspect devtools for node and start one of the memory profiling types.'",
 
     "jest:00:jsdom": "yarn jest:jsdom ./00-no-requires-no-leak",
     "jest:00:node": "yarn jest:node ./00-no-requires-no-leak",
