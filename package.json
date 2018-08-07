@@ -1,0 +1,10 @@
+{
+  "name": "jest-memory-leak-repro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Nathanael Beisiegel",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^23.4.2"
+  }
+}
