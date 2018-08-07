@@ -18,20 +18,24 @@
     "jest:00:node": "yarn jest:node ./00-no-requires-no-leak",
     "jest:00:jsdom:debug": "yarn jest:jsdom:debug ./00-no-requires-no-leak",
     "jest:00:node:debug": "yarn jest:node:debug ./00-no-requires-no-leak",
+    "jasmine:00": "jasmine ./00-no-requires-no-leak/*.test.js",
 
     "jest:01:jsdom": "yarn jest:jsdom ./01-leak-with-require-closure",
     "jest:01:node": "yarn jest:node ./01-leak-with-require-closure",
     "jest:01:jsdom:debug": "yarn jest:jsdom:debug ./01-leak-with-require-closure",
     "jest:01:node:debug": "yarn jest:node:debug ./01-leak-with-require-closure",
+    "jasmine:01": "jasmine ./01-leak-with-require-closure/*.test.js",
 
     "jest:02:jsdom": "yarn jest:jsdom ./02-hack-around-leak",
     "jest:02:node": "yarn jest:node ./02-hack-around-leak",
     "jest:02:jsdom:debug": "yarn jest:jsdom:debug ./02-hack-around-leak",
     "jest:02:node:debug": "yarn jest:node:debug ./02-hack-around-leak",
+    "jasmine:02": "jasmine ./02-hack-around-leak/*.test.js",
 
     "jest:03:jsdom": "yarn jest:jsdom ./03-large-suite-run-out-of-memory",
     "jest:03:node": "yarn jest:node ./03-large-suite-run-out-of-memory",
     "jest:03:jsdom:debug": "yarn jest:jsdom:debug ./03-large-suite-run-out-of-memory",
-    "jest:03:node:debug": "yarn jest:node:debug ./03-large-suite-run-out-of-memory"
+    "jest:03:node:debug": "yarn jest:node:debug ./03-large-suite-run-out-of-memory",
+    "jasmine:03": "jasmine ./03-large-suite-run-out-of-memory/*.test.js"
   }
 }
