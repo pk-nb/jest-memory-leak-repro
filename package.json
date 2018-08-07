@@ -9,15 +9,29 @@
     "jest": "^23.4.2"
   },
   "scripts": {
-    "jest:jsdom": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --testURL=http://localhost",
-    "jest:node": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --env=node",
+    "jest:jsdom": "jest --runInBand --logHeapUsage --testURL=http://localhost",
+    "jest:node": "jest --runInBand --logHeapUsage --env=node",
+    "jest:jsdom:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --testURL=http://localhost",
+    "jest:node:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --logHeapUsage --env=node",
+
     "jest:00:jsdom": "yarn jest:jsdom ./00-no-requires-no-leak",
     "jest:00:node": "yarn jest:node ./00-no-requires-no-leak",
+    "jest:00:jsdom:debug": "yarn jest:jsdom:debug ./00-no-requires-no-leak",
+    "jest:00:node:debug": "yarn jest:node:debug ./00-no-requires-no-leak",
+
     "jest:01:jsdom": "yarn jest:jsdom ./01-leak-with-require-closure",
     "jest:01:node": "yarn jest:node ./01-leak-with-require-closure",
+    "jest:01:jsdom:debug": "yarn jest:jsdom:debug ./01-leak-with-require-closure",
+    "jest:01:node:debug": "yarn jest:node:debug ./01-leak-with-require-closure",
+
     "jest:02:jsdom": "yarn jest:jsdom ./02-hack-around-leak",
     "jest:02:node": "yarn jest:node ./02-hack-around-leak",
+    "jest:02:jsdom:debug": "yarn jest:jsdom:debug ./02-hack-around-leak",
+    "jest:02:node:debug": "yarn jest:node:debug ./02-hack-around-leak",
+
     "jest:03:jsdom": "yarn jest:jsdom ./03-large-suite-run-out-of-memory",
-    "jest:03:node": "yarn jest:node ./03-large-suite-run-out-of-memory"
+    "jest:03:node": "yarn jest:node ./03-large-suite-run-out-of-memory",
+    "jest:03:jsdom:debug": "yarn jest:jsdom:debug ./03-large-suite-run-out-of-memory",
+    "jest:03:node:debug": "yarn jest:node:debug ./03-large-suite-run-out-of-memory"
   }
 }
