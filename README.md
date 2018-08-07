@@ -2,6 +2,7 @@ This repo serves as a memory issue reproduction against Jest 23.4.2. From these 
 isolate the memory leaks to the require/module implementation that Jest provides to isolate test
 environments.
 
+Big thanks to @lev-kazakov for https://github.com/lev-kazakov/jest-leak-fixer which was the original test suite and attempt to track down.
 
 We have 4 examples to highlight the issue. The main issue seems to stem from imports that have a closure over other imports:
 
@@ -21,6 +22,7 @@ https.request = (options, cb) => {
 ```
 
 This issue appears in both JSDOM and node environments, so I don't think it's a window= issue with JSDOM. Jasmine, as it simply uses the default require without any mocking mechanism, does not have the require performance overhead or leak. Jest-babel is not used here so while that package may contribute to running out of memory more quickly, it is not the leak.
+
 
 
 You can run each suite in different modes with the following commands:
