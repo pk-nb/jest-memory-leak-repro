@@ -43,19 +43,19 @@ jest:01:node:debug
 jasmine:01
 
 # Third suite (no leak with the = null for gc)
+jest:02:jsdom
+jest:02:jsdom:debug
+jest:02:node
+jest:02:node:debug
+jasmine:02
+
+# Fourth suite (large enough to run out of heap space with default node on a 32gb macbook pro)
+# Slows down ~1300MB and crashes around ~1400MB.
 jest:03:jsdom
 jest:03:jsdom:debug
 jest:03:node
 jest:03:node:debug
 jasmine:03
-
-# Fourth suite (large enough to run out of heap space with default node on a 32gb macbook pro)
-# Slows down ~1300MB and crashes around ~1400MB.
-jest:04:jsdom
-jest:04:jsdom:debug
-jest:04:node
-jest:04:node:debug
-jasmine:04
 ```
 
 With the debug commands you can run memory profiling with the chrome devtools by going to `chrome://inspect` and opening the dedicated devtools > memory.
