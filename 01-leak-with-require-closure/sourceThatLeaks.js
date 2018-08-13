@@ -1,10 +1,8 @@
 const https = require('https');
 
-let originalHttpsRequest = https.request
+let buffer = Buffer.alloc(1000000000)
 
 https.request = (options, cb) => {
-  return originalHttpsRequest.call(https, options, cb);
+  console.log(buffer.byteOffset, nodeBuffer.length);
+  return cb(buffer.byteOffset);
 };
-
-// If this is uncommented, the leak goes away!
-// originalHttpsRequest = null
